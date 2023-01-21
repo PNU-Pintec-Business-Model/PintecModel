@@ -21,13 +21,6 @@
       crossorigin="anonymous"
 
 
-
-
-
-
-
-
-
     ></script>
   </head>
   <body class="sb-nav-fixed">
@@ -148,13 +141,16 @@
                 <table id="datatablesSimple">
                   <thead>
                     <tr>
-                      <th>법인 이름</th>
                       <th>날짜</th>
-                      <th>품종</th>
-                      <th>평균가</th>
+                      <th>시장</th>
+                      <th>법인</th>
+                      <th>폼목</th>
+                      <th>품질</th>
+                      <th>무게</th>
                       <th>최고가</th>
-                      <th>최저가</th>
-                      <th>오늘 예측가</th>
+                      <th>최소가</th>
+                      <th>평균가</th>
+                      <th>예측가</th>
                     </tr>
                   </thead>
                   <tfoot>
@@ -163,13 +159,16 @@
                   <tbody>
                     {% for info in price_info %}
                       <tr>
-                          <td>{{info.marketname}}</td>
-                          <td>{{info.dates}}</td>
-                          <td>{{info.mclassname}}</td>
-                          <td>{{info.avgprice}}</td>
-                          <td>{{info.minprice}}</td>
-                          <td>{{info.maxprice}}</td>
-                          <td>{{info.predict_price}}</td>
+                          <td>{{info.DELNG_DE}}</td>
+                          <td>{{info.MRKT_NM}}</td>
+                          <td>{{info.CPR_NM}}</td>
+                          <td>{{info.PRDLST_NM}}</td>
+                          <td>{{info.GRAD}}</td>
+                          <td>{{info.weight}}</td>
+                          <td>{{info.PRI_MAX}}</td>
+                          <td>{{info.PRI_MIN}}</td>
+                          <td>{{info.PRI_AVE}}</td>
+                          <td>{{info.PRI_PRED}}</td>
                       </tr>
                     {% endfor %}
                   </tbody>
