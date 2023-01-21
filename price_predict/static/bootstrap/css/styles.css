@@ -76,10 +76,19 @@
   }
 }
 
+@font-face {
+  font-family: 'PuradakGentleGothicR';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.1/PuradakGentleGothicR.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
   margin: 0;
-  font-family: var(--bs-body-font-family);
-  font-size: var(--bs-body-font-size);
+  /* font-family: var(--bs-body-font-family); */
+  font-family: 'PuradakGentleGothicR';
+  /*font-size: var(--bs-body-font-size);*/
+  font-size: 18px;
   font-weight: var(--bs-body-font-weight);
   line-height: var(--bs-body-line-height);
   color: var(--bs-body-color);
@@ -4804,7 +4813,7 @@ textarea.form-control-lg {
   float: left;
   padding-right: 0.5rem;
   color: #6c757d;
-  content: var(--bs-breadcrumb-divider, "/") /* rtl: var(--bs-breadcrumb-divider, "/") */;
+  content: var(--bs-breadcrumb-divider) /* rtl: var(--bs-breadcrumb-divider, "/") */;
 }
 .breadcrumb-item.active {
   color: #6c757d;
@@ -11698,4 +11707,33 @@ body {
   width: 20px !important;
   font-size: 0.75rem;
   border-radius: 0.25rem !important;
+}
+
+#kakaofriend {
+  position: fixed;
+  height: 80px;
+  width: 80px;
+  bottom: 50px;
+  right: 50px;
+  z-index: 1;
+}
+
+.error {
+  font-size: 25px;
+}
+
+#errorval {
+  color: blue;
+  font-size: 30px;
+}
+
+#pricelist {
+  border: 2px dashed black;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+#resultbox {
+  background: rgba(0, 0, 0, 0.03);
+  padding: 25px;
 }

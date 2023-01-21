@@ -7,6 +7,12 @@
 // Scripts
 // 
 
+var predictVal=1500;
+var actualVal=1800;
+var today;
+var nextday;
+var nextdayPred=2000;
+
 window.addEventListener('DOMContentLoaded', event => {
 
     // Toggle the side navigation
@@ -24,3 +30,49 @@ window.addEventListener('DOMContentLoaded', event => {
     }
 
 });
+
+function CalculateError() {
+
+    var error = document.getElementById("errorval");
+
+    if (predictVal>actualVal) {
+        //blue
+        error.style.color = "blue";
+        error.innerHTML = " - ";
+    } else {
+        //red
+        error.style.color = "red";
+        error.innerHTML = " + ";
+    }
+
+    var errorVal=Math.abs(predictVal-actualVal);
+    return errorVal;
+}
+
+function printDate() {
+
+    const day = new Date();
+    const year = day.getFullYear();
+    const month = day.getMonth()+1;
+    const date = day.getDate();
+    const nextdate = day.getDate()+1;
+
+    today = year +"."+ month +"."+ date;
+    nextday = year +"."+ month +"."+ nextdate;
+
+    return today;
+}
+
+printDate();
+
+function printResult() {
+
+    var str = nextday +" 향도청과(법인)의 새송이(특)의 예측값은 " + nextdayPred + "으로 \
+                        어제보다 1000원 인상될 것으로 예측됩니다." ;
+
+    return str;
+}
+
+document.getElementById("dates").innerHTML = today;
+document.getElementById("errorval").innerHTML += CalculateError();
+document.getElementById("result").innerHTML = printResult();

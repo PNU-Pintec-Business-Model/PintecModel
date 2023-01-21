@@ -40,6 +40,9 @@
       </div>
       <!-- Navbar-->
     </nav>
+    <a href="https://pf.kakao.com/_NjJxixj">
+      <img id="kakaofriend" src="{% static 'bootstrap/image/kakao.jpg' %}" > 
+    </a>
     <div id="layoutSidenav">
       <div id="layoutSidenav_nav">
         <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
@@ -91,19 +94,43 @@
               <li class="breadcrumb-item active">
                 현재 법인
                 <p>
-                  <input type="text" list="company-list" />
-                  <datalist id="company-list">
+                  <select id="company-list">
                     <option value="향도청과" selected>향도청과</option>
                     <option value="유자청">유자청</option>
                     <option value="농협부산공판장">농협부산공판장</option>
-                  </datalist>
+                  </select>
+                </p>
+              </li>
+              <li class="breadcrumb-item active">품목
+                <p>
+                  <select id="item-list">
+                    <option value="새송이" selected>새송이</option>
+                    <option value="풋고추">풋고추</option>
+                  </select>
+                </p>
+              </li>
+              <li class="breadcrumb-item active">
+                세부 품목
+                <p>
+                  <select id="itemdetail-list">
+                    <option value="새송이(일반)" selected>새송이(일반)</option>
+                    <option value="청양">청양</option>
+                  </select>
+                </p>
+              </li>
+              <li class="breadcrumb-item active">
+                등급
+                <p>
+                  <select id="level-list">
+                    <option value="특" selected>특</option>
+                  </select>
                 </p>
               </li>
             </ol>
             <hr />
             <div class="row">
-              <div class="col-xl-9">
-                <div class="card mb-4" style="width: 65%">
+              <div class="col-xl-7">
+                <div class="card mb-5" style="width: 90%">
                   <div class="card-header">
                     <i class="fas fa-chart-bar me-1"></i>
                     오늘 판매가와 예측가
@@ -116,7 +143,26 @@
                   </div>
                 </div>
               </div>
-              <div class="col-xl-3">예측가보다 10%</div>
+              <div class="col-xl-5">
+                <div class="card mb-3" id="resultbox" style="width: 80%">
+                  <div id="dates">
+                  </div>
+                  <div class="error">
+                    (예측값-실제값) <span id="errorval"></span>
+                  </div>
+                  <p class="price">
+                    <ul id="pricelist" style="list-style-type: square;">
+                      <li id="predit"><예측값 : 1,500></li>
+                      <li id="avg">실제 평균가 : 1,000</li>
+                      <li id="max">실제 최고가 : 1,200</li>
+                      <li id="min">실제 최저가 : 800</li>
+                    </ul>
+                  </p>
+                  <p id="result">  
+                    
+                  </p>
+                </div>
+              </div>
             </div>
 
             <div class="row">
@@ -216,5 +262,6 @@
       crossorigin="anonymous"
     ></script>
     <script src="{% static 'bootstrap/js/datatables-simple-demo.js' %}"></script>
+    <script src="{% static 'bootstrap/js/scripts.js' %}"></script>
   </body>
 </html>
