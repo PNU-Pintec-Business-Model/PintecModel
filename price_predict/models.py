@@ -15,3 +15,5 @@ class Price(models.Model):
     PRI_MIN = models.DecimalField(max_digits=10, decimal_places=2)
     PRI_AVE = models.DecimalField(max_digits=10, decimal_places=2)
     PRI_PRED = models.DecimalField(max_digits=10, decimal_places=2)
+
+

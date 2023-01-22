@@ -26,14 +26,14 @@
   <body class="sb-nav-fixed">
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
       <!-- Navbar Brand-->
-      <a class="navbar-brand ps-3" href="/">PinTec </a>
+      <a class="navbar-brand ps-3" href="/price_predict">PinTec </a>
       <!-- Sidebar Toggle-->
       <div style="width: 100%">
         <button
           style="float: right, padding"
           class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0"
           id="sidebarToggle"
-          href="#!"
+          href="/price_predict"
         >
           <i class="fas fa-bars"></i>
         </button>
@@ -49,28 +49,11 @@
           <div class="sb-sidenav-menu">
             <div class="nav">
               <div class="sb-sidenav-menu-heading">농산물 가격 비교</div>
-              <a class="nav-link" href="/">
+              <a class="nav-link" href="/price_predict">
                 <div class="sb-nav-link-icon">
                   <i class="fas fa-tachometer-alt"></i>
                 </div>
                 법인별 가격
-              </a>
-              <div class="sb-sidenav-menu-heading">Interface</div>
-              <a
-                class="nav-link collapsed"
-                href="#"
-                data-bs-toggle="collapse"
-                data-bs-target="#collapseLayouts"
-                aria-expanded="false"
-                aria-controls="collapseLayouts"
-              >
-                <div class="sb-nav-link-icon">
-                  <i class="fas fa-columns"></i>
-                </div>
-                  카카오톡
-                <div class="sb-sidenav-collapse-arrow">
-                  <i class="fas fa-angle-down"></i>
-                </div>
               </a>
               <div
                 class="collapse"
@@ -78,9 +61,6 @@
                 aria-labelledby="headingOne"
                 data-bs-parent="#sidenavAccordion"
               >
-                <nav class="sb-sidenav-menu-nested nav">
-                  <a class="nav-link" href="/kakao">임시</a>
-                </nav>
               </div>
             </div>
           </div>
@@ -200,9 +180,21 @@
                     </tr>
                   </thead>
                   <tfoot>
-                    <tr></tr>
+                    <tr>
+                      <th>날짜</th>
+                      <th>시장</th>
+                      <th>법인</th>
+                      <th>폼목</th>
+                      <th>품질</th>
+                      <th>무게</th>
+                      <th>최고가</th>
+                      <th>최소가</th>
+                      <th>평균가</th>
+                      <th>예측가</th>
+                    </tr>
                   </tfoot>
                   <tbody>
+                    {% if price_info %}
                     {% for info in price_info %}
                       <tr>
                           <td>{{info.DELNG_DE}}</td>
@@ -217,6 +209,7 @@
                           <td>{{info.PRI_PRED}}</td>
                       </tr>
                     {% endfor %}
+                    {% endif %}
                   </tbody>
                 </table>
               </div>
