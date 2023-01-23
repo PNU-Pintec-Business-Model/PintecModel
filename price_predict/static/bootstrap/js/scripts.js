@@ -37,16 +37,16 @@ function CalculateError() {
 
     if (predictVal>actualVal) {
         //blue
+        error.innerHTML += " -";
         error.style.color = "blue";
-        error.innerHTML = " - ";
     } else {
         //red
+        error.innerHTML += " +";
         error.style.color = "red";
-        error.innerHTML = " + ";
     }
 
     var errorVal=Math.abs(predictVal-actualVal);
-    return errorVal;
+    return error.innerHTML+errorVal;
 }
 
 function printDate() {
@@ -67,12 +67,12 @@ printDate();
 
 function printResult() {
 
-    var str = nextday +" 향도청과(법인)의 새송이(특)의 예측값은 " + nextdayPred + "으로 \
+    var str = nextday +"(내일) 새송이(특) 예측값은 <span style='color: red;'>" + nextdayPred + "</span>으로 \
                         어제보다 1000원 인상될 것으로 예측됩니다." ;
 
     return str;
 }
 
-document.getElementById("dates").innerHTML = today;
+document.getElementById("dates").innerHTML = today+"(오늘)";
 document.getElementById("errorval").innerHTML += CalculateError();
 document.getElementById("result").innerHTML = printResult();

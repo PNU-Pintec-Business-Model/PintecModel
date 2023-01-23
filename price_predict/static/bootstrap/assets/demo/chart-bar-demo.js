@@ -20,7 +20,7 @@ var myLineChart = new Chart(ctx, {
       label: "Revenue",
       backgroundColor: "rgba(2,117,216,1)",
       borderColor: "rgba(2,117,216,1)",
-      data: [ 6000, 5000], //{{predict_result[0]}}
+      data: [ 3000, 5000], //{{predict_result[0]}}
     }],
   },
   options: {
@@ -49,6 +49,44 @@ var myLineChart = new Chart(ctx, {
     },
     legend: {
       display: false
+    }
+  }
+});
+
+//--------------------------------------------------------//
+
+var ctx2 = document.getElementById('companyChart');
+var myChart2 = new Chart(ctx2, {
+  type: 'bar',
+  data: {
+    labels: ['중앙청과', '서울청과', '동화청과', '농협가락(공)', '한국청과'],
+    datasets: [{
+      label: '# of Votes',
+      data: [12, 19, 3, 5, 2, 3],
+      backgroundColor: [
+        'rgba(255, 99, 132, 1)',
+        'rgba(54, 162, 235, 1)',
+        'rgba(255, 206, 86, 1)',
+        'rgba(75, 192, 192, 1)',
+        'rgba(153, 102, 255, 1)'
+      ],
+      borderColor: [
+        'rgba(255, 99, 132, 1)',
+        'rgba(54, 162, 235, 1)',
+        'rgba(255, 206, 86, 1)',
+        'rgba(75, 192, 192, 1)',
+        'rgba(153, 102, 255, 1)'
+      ],
+      borderWidth: 1
+    }]
+  },
+  options: {
+    scales: {
+      yAxes: [{
+        ticks: {
+          beginAtZero: true
+        }
+      }]
     }
   }
 });

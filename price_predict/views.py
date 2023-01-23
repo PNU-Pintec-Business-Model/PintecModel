@@ -117,3 +117,46 @@ def dbrequest(request):
             'company_list': company_list,
         }
     )
+
+def predict0(request, company) :
+    
+    companylist=['중앙청과', '서울청과', '동화청과', '농협가락(공)', '한국청과']
+    """
+    f = open("./price_predict/csvdata/update_data0.csv", 'r', encoding="UTF-8")
+    dr = csv.DictReader(f)
+    s = pd.DataFrame(dr)
+    ss=[]
+    for j in range(len(s)) :
+        if s["CPR_NM"][j]==companylist[int(company)] :
+            st = (s["DELNG_DE"][j], s["MRKT_NM"][j], s["CPR_NM"][j], s["PRDLST_NM"][j],s["SPCIES_NM"][j],
+                  s["GRAD"][j], s["weight"][j], s["PRI_MAX"][j], s["PRI_MIN"][j], s["PRI_AVE"][j], s["PRI_PRED"][j])
+            ss.append(st)
+    """
+    price_info0 = Price.objects.filter(CPR_NM=companylist[int(company)], PRDLST_NM='풋고추')
+            
+    return render(
+        request,
+        'index.html',
+        {
+            'price_info': price_info0,
+            'predict_result': predict_result,
+            'good_list': good_list,
+            'company_list': company_list,
+        }
+    )
+    
+def predict1(request, company) :
+    companylist=['중앙청과', '서울청과', '동화청과', '농협가락(공)', '한국청과']
+
+    price_info1 = Price.objects.filter(CPR_NM=companylist[int(company)], PRDLST_NM='새송이')
+    
+    return render(
+        request,
+        'index.html',
+        {
+            'price_info': price_info1,
+            'predict_result': predict_result,
+            'good_list': good_list,
+            'company_list': company_list,
+        }
+    )

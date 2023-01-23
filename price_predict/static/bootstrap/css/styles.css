@@ -77,8 +77,8 @@
 }
 
 @font-face {
-  font-family: 'PuradakGentleGothicR';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.1/PuradakGentleGothicR.woff2') format('woff2');
+  font-family: 'ImcreSoojin';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.3/ImcreSoojin.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
@@ -86,7 +86,7 @@
 body {
   margin: 0;
   /* font-family: var(--bs-body-font-family); */
-  font-family: 'PuradakGentleGothicR';
+  font-family: 'ImcreSoojin';
   /*font-size: var(--bs-body-font-size);*/
   font-size: 18px;
   font-weight: var(--bs-body-font-weight);
@@ -11736,4 +11736,13 @@ body {
 #resultbox {
   background: rgba(0, 0, 0, 0.03);
   padding: 25px;
+}
+
+#btn {
+  margin: 10px;
+  margin-top: 20px;
+  height: 40px;
+  width: 60px;
+  border: var(--bs-gray-900);
+  border-radius: 20%;
 }

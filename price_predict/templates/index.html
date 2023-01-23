@@ -70,43 +70,48 @@
         <main>
           <div class="container-fluid px-4">
             <h1 class="mt-4">법인별 농산물 가격 비교</h1>
-            <ol class="breadcrumb mb-4">
-              <li class="breadcrumb-item active">
-                현재 법인
-                <p>
-                  <select id="company-list">
-                    <option value="향도청과" selected>향도청과</option>
-                    <option value="유자청">유자청</option>
-                    <option value="농협부산공판장">농협부산공판장</option>
-                  </select>
-                </p>
-              </li>
-              <li class="breadcrumb-item active">품목
-                <p>
-                  <select id="item-list">
-                    <option value="새송이" selected>새송이</option>
-                    <option value="풋고추">풋고추</option>
-                  </select>
-                </p>
-              </li>
-              <li class="breadcrumb-item active">
-                세부 품목
-                <p>
-                  <select id="itemdetail-list">
-                    <option value="새송이(일반)" selected>새송이(일반)</option>
-                    <option value="청양">청양</option>
-                  </select>
-                </p>
-              </li>
-              <li class="breadcrumb-item active">
-                등급
-                <p>
-                  <select id="level-list">
-                    <option value="특" selected>특</option>
-                  </select>
-                </p>
-              </li>
-            </ol>
+            <form action="" method="get" id="checkform">
+              <ol class="breadcrumb mb-4">
+                <li class="breadcrumb-item active">
+                  현재 법인
+                  <p>
+                    <select id="company-list" name="company-list">
+                      <option value="중앙청과" selected>중앙청과</option>
+                      <option value="서울청과">서울청과</option>
+                      <option value="동화청과">동화청과</option>
+                      <option value="농협가락(공)">농협가락(공)</option>
+                      <option value="한국청과">한국청과</option>
+                    </select>
+                  </p>
+                </li>
+                <li class="breadcrumb-item active">품목
+                  <p>
+                    <select id="item-list">
+                      <option value="새송이" selected>새송이</option>
+                      <option value="풋고추">풋고추</option>
+                    </select>
+                  </p>
+                </li>
+                <li class="breadcrumb-item active">
+                  세부 품목
+                  <p>
+                    <select id="itemdetail-list">
+                      <option value="새송이(일반)" selected>새송이(일반)</option>
+                      <option value="청양">청양</option>
+                    </select>
+                  </p>
+                </li>
+                <li class="breadcrumb-item active">
+                  등급
+                  <p>
+                    <select id="level-list">
+                      <option value="특" selected>특</option>
+                    </select>
+                  </p>
+                </li>
+                <button id='btn' name='btn' value='' href="/predict0">선택</button>
+              </ol>
+            </form>
             <hr />
             <div class="row">
               <div class="col-xl-7">
@@ -154,6 +159,17 @@
                   </div>
                   <div class="card-body">
                     <canvas id="myAreaChart" width="100%" height="40"></canvas>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-6">
+                <div class="card mb-4">
+                  <div class="card-header">
+                    <i class="fas fa-chart-area me-1"></i>
+                    법인별 실제 평균값
+                  </div>
+                  <div class="card-body">
+                    <canvas id="companyChart" width="100%" height="40"></canvas>
                   </div>
                 </div>
               </div>
